@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body dir="rtl">
+    <center>
+        <h1>דף התחברות </h1>
+        <br>
+        <input type=" text " placeholder="הכנס שם משתמש " id="UserName ">
+        <br>
+        <input type="password " name=" " placeholder="הכנס סיסמא " id="Password ">
+        <br><br>
+        <button onclick="login() ">התחבר</button>
+        <br><br>
+        <button onclick="register() ">הירשם</button>
+        <br>
+        <script>
+            function register() {
+                window.location = "register.html "
+            }
+
+            function login() {
+                let userName = document.getElementById("UserName ").value // קיבלנו את שם הלקוח באתר
+                let password = document.getElementById("Password ").value // קיבלנו את שם המשתמש הלקוח באתר
+                let userLocal = localStorage.getItem("UserName ")
+                let passwordLocal = localStorage.getItem("Password ")
+
+                if (userName == userLocal && password == passwordLocal) {
+                    alert("הפרטים נכונים ! ")
+                    window.location = "game.html "
+                } else {
+                    alert("הפרטים לא נכונים ")
+                }
+            }
+        </script>
+    </center>
+</body>
+
+</html>
